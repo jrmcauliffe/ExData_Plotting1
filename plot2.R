@@ -33,7 +33,7 @@ data <- data.frame("DateTime" = dt, data[3:9])
 
 png(filename = "plot2.png", width = 480, height = 480)
 
-## Create histogram like first example in README
+## Create histogram like second example in README
 plot(data$DateTime, data$Global_active_power,  type = "l", xlab = "", 
      ylab = "Global Active Power (kilowatts)")
 
