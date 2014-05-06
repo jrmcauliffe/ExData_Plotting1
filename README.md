@@ -1,6 +1,6 @@
 ## Course Project 1 results
 
-I have created the four required plots from the data as described in the 'Introduction' below. There are four scripts plot[1-4].R which are completely self contained. They each extract the required observations from the dataset, then convert the date and time columns to a single 'DateTime' column. These plots are then saved a corresponding PNG file name plot[1-4].png.
+I have created the four required plots from the data as described in the 'Introduction' below. There are four scripts (plot[1-4].R) which are completely self contained. They each extract the required observations from the dataset, then convert the date and time columns to a single 'DateTime' column. These plots are then saved in a corresponding PNG file (plot[1-4].png).
 
 ### Plot 1
 
