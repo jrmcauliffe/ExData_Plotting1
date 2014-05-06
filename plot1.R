@@ -16,16 +16,18 @@ if (!file.exists(datafile)){
   file.remove(tempfilename)
 }
 
-## Coerce into correct classes
-data.classes = classes <- c("Date","character","numeric","numeric","numeric","numeric"
-                            ,"numeric","numeric","numeric")
-
 ## Because we are skipping header, read in the column names
 header.names <- unname(unlist((read.table(datafile, nrows = 1, sep = ";")[1,])))
 
 ## Only read in the correct lines to save parsing / loading time & memory
 data <- read.csv(datafile, sep = ";", skip = 66636, nrows = 2880, 
-                 colClasses = data.classes, col.names = header.names)
+                 col.names = header.names)
+
+## Convert Date and Time text to DateTime object
+dt <- as.POSIXct(strptime(paste(data[,1], data[,2]), format = "%d/%m/%Y %H:%M:%S"))
+
+## Drop separate Date and Time columns, then prepend new
+data <- data.frame("DateTime" = dt, data[3:9])
 
 ## PLOTTING STARTS HERE
 
